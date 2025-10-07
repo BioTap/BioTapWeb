@@ -157,8 +157,8 @@ src/
 
 ## 📞 **Contact**
 
-- **Email**: biopayservices@gmail.com
-- **Website**: [BioTap Landing Page](https://your-domain.com)
+- **Email**: contact@bio-tap.com
+- **Website**: [BioTap Landing Page](https://bio-tap.com)
 
 ## 📜 **License**
 
