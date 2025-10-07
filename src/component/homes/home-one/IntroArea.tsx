@@ -16,7 +16,7 @@ const intro_data: DataType[] = [
    {
       id: 1,
       title: "Who We Are",
-      desc: (<>Biotap is a <span className="highlight-word">next-generation fintech platform</span> redefining how people access, manage, and secure their money. We merge biometric authentication with intelligent banking systems to create a payment experience that's faster, safer, and more personal.</>),
+      desc: (<>Biotap is a <span className="highlight-word">next-generation fintech platform</span> redefining how people access, manage, and secure their money. We merge biometric authentication with intelligent banking systems to create a payment experience that&apos;s faster, safer, and more personal.</>),
       icon: "🔐",
       color: "#4ecdc4",
       gradient: "linear-gradient(135deg, #4ecdc4, #45b7d1)"

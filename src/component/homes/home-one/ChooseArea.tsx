@@ -36,7 +36,7 @@ const biotap_features: DataType2[] = [
       id: 2,
       icon: "🛡️",
       title: "Adaptive Fraud Shield",
-      desc: "Biotap's AI-powered fraud detection learns from your transaction behavior in real time. It automatically flags anomalies and locks down suspicious activity before it happens — not after.",
+      desc: "Biotap&apos;s AI-powered fraud detection learns from your transaction behavior in real time. It automatically flags anomalies and locks down suspicious activity before it happens — not after.",
    },
    {
       id: 3,
@@ -63,7 +63,7 @@ const ChooseArea = () => {
                            <div className="enhanced-text-block">
                               <div className="main-statement">
                                  <p className="sec-text enhanced-main-text">
-                                    Biotap isn't just another banking app — it's a 
+                                    Biotap isn&apos;t just another banking app — it&apos;s a 
                                     <span className="highlight-text"> secure, intelligent, and human-centered</span> 
                                     financial experience.
                                  </p>
@@ -96,7 +96,7 @@ const ChooseArea = () => {
                                     <span className="gear-icon">⚙️</span>
                                  </div>
                                  <p className="feature-callout-text">
-                                    <strong>3 Exclusive Biotap Features Other Banks Don't Offer</strong>
+                                    <strong>3 Exclusive Biotap Features Other Banks Don&apos;t Offer</strong>
                                  </p>
                                  <div className="callout-glow"></div>
                               </div>
