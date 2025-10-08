@@ -2,7 +2,7 @@ import Register from "@/component/register";
 import Wrapper from "@/layouts/Wrapper";
 
 export const metadata = {
-   title: "Register IKO - ICO & Crypto Landing Page Page React Next js Template",
+   title: "Register The Future of Biometric Banking anywherePage React Next js Template",
 };
 const index = () => {
    return (

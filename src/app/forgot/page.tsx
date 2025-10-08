@@ -2,7 +2,7 @@ import ResetPassWord from "@/component/reset-password";
 import Wrapper from "@/layouts/Wrapper";
 
 export const metadata = {
-   title: "Reset PassWord IKO - ICO & Crypto Landing Page Page React Next js Template",
+   title: "Reset PassWord The Future of Biometric Banking anywherePage React Next js Template",
 };
 const index = () => {
    return (

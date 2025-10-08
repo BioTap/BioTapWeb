@@ -2,7 +2,7 @@ import HomeOne from "@/component/homes/home-one";
 import Wrapper from "@/layouts/Wrapper";
 
 export const metadata = {
-  title: "Biotap — Innovating the Future of Bioscience and Technology",
+  title: "BioTap - Secure Biometric Payment Solutions",
 };
 const index = () => {
   return (

@@ -48,8 +48,8 @@ const FooterTwo = () => {
                   <div className="footer-widget widget-contact">
                      <h3 className="fw-title">CONTACT US</h3>
                      <p className="contact-info-text">202 Helga Springs Rd, Crawford, TN 38554</p>
-                     <div className="contact-info-link">Call Us: <Link href="tel:8002758777">800.275.8777</Link></div>
-                     <div className="contact-info-link"><Link href="mailto:iko@company.com">iko@company.com</Link></div>
+                     <div className="contact-info-link">Call Us: <Link href="tel:+2438079916633">+2438079916633</Link></div>
+                     <div className="contact-info-link"><Link href="mailto:contact@bio-tap.com">contact@bio-tap.com</Link></div>
                      <p className="copyright-text">Copyright © 2025 <Link href="#">Biotap.</Link> All rights reserved.</p>
                   </div>
                </div>
