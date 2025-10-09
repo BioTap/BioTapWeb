@@ -65,7 +65,7 @@ const FooterOne = () => {
                         <p className="about-text">BioTap is a cutting-edge biometric payment technology company at the forefront of innovation in secure digital banking. Established in 2024, we&apos;re revolutionizing how people interact with financial services through advanced biometric authentication.</p>
                         <div className="social-btn style2">
                            {/* <Link href="https://facebook.com/"><i className="fab fa-facebook-f"></i></Link> */}
-                           <Link href="https://twitter.com/Biotapservices">
+                           <Link href="https://x.com/Biotapservices">
                               <i className="fab fa-twitter"></i>
                            </Link>
                            <Link href="https://www.instagram.com/Biotap_services"><i className="fab fa-instagram"></i></Link>
@@ -136,7 +136,7 @@ const FooterOne = () => {
                   <div className="footer-widget widget-contact">
                      <h3 className="fw-title">CONTACT US</h3>
                      <p className="contact-info-text">Lagos, Nigeria</p>
-                     <div className="contact-info-link">Call Us: <Link href="tel:+2348079916633">+234 (807) 991-6633</Link></div>
+                     <div className="contact-info-link">Call Us: <Link href="tel:+2347033219893">+234 703 321 9893</Link></div>
                      <div className="contact-info-link"><Link href="mailto:contact@bio-tap.com">contact@bio-tap.com</Link></div>
                      <p className="copyright-text">Copyright © 2025 <Link href="#">BioTap.</Link> All rights reserved.</p>
                   </div>

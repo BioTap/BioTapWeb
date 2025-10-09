@@ -17,16 +17,11 @@ const FooterTwo = () => {
                         </div>
                         <p className="about-text">BioTap is a cutting-edge biometric payment technology company at the forefront of innovation in secure digital banking. Established in 2024</p>
                         <div className="social-btn style2">
-                           <Link href="https://facebook.com/"><i className="fab fa-facebook-f"></i></Link>
-                           <Link href="#">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                 <path
-                                    d="M10.0596 7.34522L15.8879 0.570312H14.5068L9.44607 6.45287L5.40411 0.570312H0.742188L6.85442 9.46578L0.742188 16.5703H2.12338L7.4676 10.3581L11.7362 16.5703H16.3981L10.0593 7.34522H10.0596ZM8.16787 9.54415L7.54857 8.65836L2.62104 1.61005H4.74248L8.71905 7.29827L9.33834 8.18405L14.5074 15.5779H12.386L8.16787 9.54449V9.54415Z"
-                                    fill="currentColor"></path>
-                              </svg>
+                           <Link href="https://twitter.com/Biotapservices">
+                              <i className="fab fa-twitter"></i>
                            </Link>
-                           <Link href="https://www.instagram.com/"><i className="fab fa-instagram"></i></Link>
-                           <Link href="https://www.linkedin.com/"><i className="fab fa-linkedin"></i></Link>
+                           <Link href="https://www.instagram.com/Biotap_services"><i className="fab fa-instagram"></i></Link>
+                           <Link href="https://www.linkedin.com/in/Biotapservices"><i className="fab fa-linkedin"></i></Link>
                         </div>
                      </div>
                   </div>
@@ -47,8 +42,8 @@ const FooterTwo = () => {
                <div className="col-xl-auto col-lg-6 order-xl-2">
                   <div className="footer-widget widget-contact">
                      <h3 className="fw-title">CONTACT US</h3>
-                     <p className="contact-info-text">202 Helga Springs Rd, Crawford, TN 38554</p>
-                     <div className="contact-info-link">Call Us: <Link href="tel:+2438079916633">+2438079916633</Link></div>
+                     <p className="contact-info-text">Lagos, Nigeria</p>
+                     <div className="contact-info-link">Call Us: <Link href="tel:+2347033219893">+234 703 321 9893</Link></div>
                      <div className="contact-info-link"><Link href="mailto:contact@bio-tap.com">contact@bio-tap.com</Link></div>
                      <p className="copyright-text">Copyright © 2025 <Link href="#">Biotap.</Link> All rights reserved.</p>
                   </div>

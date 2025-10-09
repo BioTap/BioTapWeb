@@ -1,5 +1,4 @@
 import Link from "next/link";
-import ContactForm from "../forms/ContactForm"
 
 interface DataType {
    id: number;
@@ -13,25 +12,25 @@ const contact_data: DataType[] = [
       id: 1,
       icon: "fas fa-map-marker-alt",
       title: "Location",
-      info: (<>1901 Thornridge Cir. <br /> Shiloh, Hawaii</>),
+      info: (<>Lagos, Nigeria</>),
    },
    {
       id: 2,
       icon: "fas fa-phone-alt",
       title: "Contact",
-      info: (<><Link href="tel:0123456789">+88(0) 555-0108</Link> <br /> <Link href="tel:0123456789">+88(0) 555-01117</Link></>),
+      info: (<><Link href="tel:+2347033219893">+234 703 321 9893</Link></>),
    },
    {
       id: 3,
       icon: "fas fa-envelope",
       title: "Email",
-      info: (<><Link href="mailto:xeco.@example.com">sara.cruz@example.com</Link> <br /> <Link href="mailto:xeco.@example.com">xeco.@example.com</Link></>),
+      info: (<><Link href="mailto:contact@bio-tap.com">contact@bio-tap.com</Link></>),
    },
    {
       id: 4,
       icon: "fas fa-business-time",
       title: "Visit Between",
-      info: (<>Mon - Sat : 8.00-5.00 <br /> Sunday : Closed</>),
+      info: (<>Mon - Sat : 8.00-5.00 <br /> </>),
    },
 ]
 
@@ -57,18 +56,17 @@ const ContactArea = () => {
                </div>
             </div>
             
-            <div className="contact-form-wrap">
-               <div className="row g-0">
-                  <div className="col-57 order-0 order-lg-2">
-                     <div className="contact-form">
-                        <h4 className="title">Send a message</h4>
-                        <ContactForm />
-                        <p className="ajax-response mb-0"></p>
-                     </div>
-                  </div>
-                  <div className="col-43">
+            <div className="contact-map-wrap">
+               <div className="row justify-content-center">
+                  <div className="col-lg-10">
                      <div className="contact-map">
-                        <iframe src="https://geo-devrel-javascript-samples.web.app/samples/style-array/app/dist/" allowFullScreen loading="lazy"></iframe>
+                        <iframe 
+                           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.5!2d3.3792!3d6.5244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8b2ae68280c1%3A0xdc9e87a367c3d9cb!2sLagos%2C%20Nigeria!5e0!3m2!1sen!2sus!4v1234567890" 
+                           allowFullScreen 
+                           loading="lazy"
+                           referrerPolicy="no-referrer-when-downgrade"
+                           style={{ width: '100%', height: '400px', border: 'none', borderRadius: '10px' }}
+                        ></iframe>
                      </div>
                   </div>
                </div>

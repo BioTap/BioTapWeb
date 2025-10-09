@@ -10,36 +10,53 @@ const BetaSignupCard = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [showConfetti, setShowConfetti] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
-  const [betaUsers, setBetaUsers] = useState(2500)
+  const [betaUsers, setBetaUsers] = useState(() => {
+    // Load saved beta users count from localStorage, default to 2500
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('biotap-beta-users')
+      return saved ? parseInt(saved, 10) : 2500
+    }
+    return 2500
+  })
   const [isAnimating, setIsAnimating] = useState(false)
 
-  // Countdown timer state
+  // Countdown timer state - calculate time remaining to target date
   const [timeLeft, setTimeLeft] = useState({
-    days: 156,
-    hours: 18,
-    minutes: 25,
-    seconds: 28
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
   })
 
-  // Note: Beta users now only increase when someone actually submits the form
-  // No random simulation - only real signups increase the count
+  // Set target date to be exactly 155 days from now
+  const targetDate = new Date();
+  targetDate.setDate(targetDate.getDate() + 155);
+  targetDate.setHours(0, 0, 0, 0); // Set to start of day
 
   // Countdown timer effect
   useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(prev => {
-        if (prev.seconds > 0) {
-          return { ...prev, seconds: prev.seconds - 1 }
-        } else if (prev.minutes > 0) {
-          return { ...prev, minutes: prev.minutes - 1, seconds: 59 }
-        } else if (prev.hours > 0) {
-          return { ...prev, hours: prev.hours - 1, minutes: 59, seconds: 59 }
-        } else if (prev.days > 0) {
-          return { ...prev, days: prev.days - 1, hours: 23, minutes: 59, seconds: 59 }
-        }
-        return prev
-      })
-    }, 1000)
+    const calculateTimeLeft = () => {
+      const now = new Date().getTime()
+      const target = targetDate.getTime()
+      const difference = target - now
+
+      if (difference > 0) {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24))
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60))
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000)
+
+        setTimeLeft({ days, hours, minutes, seconds })
+      } else {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 })
+      }
+    }
+
+    // Calculate immediately
+    calculateTimeLeft()
+
+    // Update every second
+    const timer = setInterval(calculateTimeLeft, 1000)
 
     return () => clearInterval(timer)
   }, [])
@@ -49,6 +66,13 @@ const BetaSignupCard = () => {
     
     if (!email || !email.includes('@')) {
       toast.error('Please enter a valid email address')
+      return
+    }
+
+    // Check if email already exists in localStorage
+    const existingEmails = JSON.parse(localStorage.getItem('biotap-beta-emails') || '[]')
+    if (existingEmails.includes(email)) {
+      toast.error('This email is already registered for the beta program!')
       return
     }
 
@@ -73,15 +97,22 @@ const BetaSignupCard = () => {
         throw new Error('Failed to send email')
       }
       
-      // Update beta user count
-      setBetaUsers(prev => prev + 1)
+      // Increment beta user count and save to localStorage
+      const newCount = betaUsers + 1
+      setBetaUsers(newCount)
+      localStorage.setItem('biotap-beta-users', newCount.toString())
+      
+      // Add email to registered emails list
+      const updatedEmails = [...existingEmails, email]
+      localStorage.setItem('biotap-beta-emails', JSON.stringify(updatedEmails))
+      
       setIsAnimating(true)
       setTimeout(() => setIsAnimating(false), 1000)
       
       // Show success
       setIsSubmitted(true)
       setShowConfetti(true)
-      toast.success('🎉 Welcome to BioTap Beta! You\'ll be the first to try our app when it goes live!')
+      toast.success(`🎉 Welcome to BioTap Beta! You're user #${newCount}! You'll be the first to try our app when it goes live!`)
       
       // Hide confetti after 3 seconds
       setTimeout(() => setShowConfetti(false), 3000)

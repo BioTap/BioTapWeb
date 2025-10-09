@@ -14,20 +14,21 @@ const Sidebar = ({ isActive, setIsActive }: any) => {
             left: 0,
             width: '100%',
             height: '100%',
-            zIndex: 9999,
-            display: isActive ? 'block' : 'none'
+            zIndex: 9999
         }}>
             <div className="mobile-menu" style={{
                 position: 'fixed',
                 top: 0,
                 right: 0,
-                width: '320px',
+                width: '75%',
+                maxWidth: '320px',
                 height: '100%',
                 backgroundColor: '#1a1a1a',
                 transform: isActive ? 'translateX(0)' : 'translateX(100%)',
-                transition: 'transform 0.3s ease-in-out',
+                transition: 'transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
                 zIndex: 10000,
-                overflowY: 'auto'
+                overflowY: 'auto',
+                boxShadow: isActive ? '-10px 0 30px rgba(0, 0, 0, 0.3)' : 'none'
             }}>
                 <nav className="menu-box" style={{ padding: '20px', height: '100%', display: 'flex', flexDirection: 'column' }}>
                     {/* Header with close button and logo */}
@@ -41,27 +42,16 @@ const Sidebar = ({ isActive, setIsActive }: any) => {
                     }}>
                         <div className="nav-logo">
                             <Link href="/" onClick={() => setIsActive(false)}>
-                                <div className="mobile-logo-container" style={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    width: '50px',
-                                    height: '50px',
-                                    backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                                    borderRadius: '12px',
-                                    padding: '8px'
-                                }}>
-                                    <Image 
-                                        src={logo_1} 
-                                        alt="BioTap" 
-                                        style={{
-                                            width: '36px',
-                                            height: '36px',
-                                            objectFit: 'contain',
-                                            filter: 'brightness(0) invert(1)'
-                                        }}
-                                    />
-                                </div>
+                                <Image 
+                                    src={logo_1} 
+                                    alt="BioTap" 
+                                    style={{
+                                        height: '40px',
+                                        width: 'auto',
+                                        objectFit: 'contain',
+                                        filter: 'brightness(0) invert(1)'
+                                    }}
+                                />
                             </Link>
                         </div>
                         <div 
@@ -112,23 +102,7 @@ const Sidebar = ({ isActive, setIsActive }: any) => {
                             margin: 0
                         }}>
                             <li>
-                                <a href="https://facebook.com/" style={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    width: '40px',
-                                    height: '40px',
-                                    backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                                    borderRadius: '8px',
-                                    color: '#fff',
-                                    textDecoration: 'none',
-                                    transition: 'all 0.3s ease'
-                                }}>
-                                    <i className="fab fa-facebook-f"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://twitter.com/" style={{
+                                <a href="https://twitter.com/Biotapservices" style={{
                                     display: 'flex',
                                     alignItems: 'center',
                                     justifyContent: 'center',
@@ -144,7 +118,7 @@ const Sidebar = ({ isActive, setIsActive }: any) => {
                                 </a>
                             </li>
                             <li>
-                                <a href="https://instagram.com/" style={{
+                                <a href="https://www.instagram.com/Biotap_services" style={{
                                     display: 'flex',
                                     alignItems: 'center',
                                     justifyContent: 'center',
@@ -160,7 +134,7 @@ const Sidebar = ({ isActive, setIsActive }: any) => {
                                 </a>
                             </li>
                             <li>
-                                <a href="https://linkedin.com/" style={{
+                                <a href="https://www.linkedin.com/in/Biotapservices" style={{
                                     display: 'flex',
                                     alignItems: 'center',
                                     justifyContent: 'center',
@@ -173,22 +147,6 @@ const Sidebar = ({ isActive, setIsActive }: any) => {
                                     transition: 'all 0.3s ease'
                                 }}>
                                     <i className="fab fa-linkedin-in"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://youtube.com/" style={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    width: '40px',
-                                    height: '40px',
-                                    backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                                    borderRadius: '8px',
-                                    color: '#fff',
-                                    textDecoration: 'none',
-                                    transition: 'all 0.3s ease'
-                                }}>
-                                    <i className="fab fa-youtube"></i>
                                 </a>
                             </li>
                         </ul>
@@ -204,8 +162,11 @@ const Sidebar = ({ isActive, setIsActive }: any) => {
                     left: 0,
                     width: '100%',
                     height: '100%',
-                    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                    zIndex: 9998
+                    backgroundColor: isActive ? 'rgba(0, 0, 0, 0.6)' : 'rgba(0, 0, 0, 0)',
+                    transition: 'background-color 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+                    zIndex: 9998,
+                    backdropFilter: isActive ? 'blur(4px)' : 'blur(0px)',
+                    WebkitBackdropFilter: isActive ? 'blur(4px)' : 'blur(0px)'
                 }}
             ></div>
         </div>

@@ -6,19 +6,20 @@ import { useLanguage } from '@/contexts/LanguageContext';
 const CountdownClock=()=> {
   const { t } = useLanguage();
   
-  // Set the expiration timestamp based on the current time plus the desired duration
-  const time = new Date();
-  time.setDate(time.getDate() + 156); // 302 days
-  time.setHours(time.getHours() + 18); // 2 hours
-  time.setMinutes(time.getMinutes() + 28); // 59 minutes
-  time.setSeconds(time.getSeconds() + 59); // 59 seconds
-
+  // Set target date to be exactly 155 days from now
+  const targetDate = new Date();
+  targetDate.setDate(targetDate.getDate() + 155);
+  targetDate.setHours(0, 0, 0, 0); // Set to start of day
+  
   const {
     seconds,
     minutes,
     hours,
     days,
-  } = useTimer({ expiryTimestamp: time, onExpire: () => console.warn('onExpire called') });
+  } = useTimer({ 
+    expiryTimestamp: targetDate, 
+    onExpire: () => console.warn('Countdown expired!') 
+  });
 
   return (
     <>
