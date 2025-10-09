@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { toast } from 'react-toastify'
 import Confetti from 'react-confetti'
 import { useLanguage } from '@/contexts/LanguageContext'
@@ -29,9 +29,12 @@ const BetaSignupCard = () => {
   })
 
   // Set target date to be exactly 155 days from now
-  const targetDate = new Date();
-  targetDate.setDate(targetDate.getDate() + 155);
-  targetDate.setHours(0, 0, 0, 0); // Set to start of day
+  const targetDate = useMemo(() => {
+    const date = new Date();
+    date.setDate(date.getDate() + 155);
+    date.setHours(0, 0, 0, 0); // Set to start of day
+    return date;
+  }, []);
 
   // Countdown timer effect
   useEffect(() => {

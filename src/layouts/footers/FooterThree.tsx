@@ -18,7 +18,7 @@ const FooterThree = () => {
                         <div className="footer-widget text-center">
                            <h4 className="fw-title">Subscribe Newsletter</h4>
                            <div className="footer-newsletter">
-                              <p>Stay updated with BioTap's latest developments and innovations in biometric payment technology.</p>
+                              <p>Stay updated with BioTap&apos;s latest developments and innovations in biometric payment technology.</p>
                               <NewsletterForm />
                            </div>
                         </div>
