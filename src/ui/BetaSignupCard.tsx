@@ -59,7 +59,7 @@ const BetaSignupCard = () => {
     const timer = setInterval(calculateTimeLeft, 1000)
 
     return () => clearInterval(timer)
-  }, [])
+  }, [targetDate])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
