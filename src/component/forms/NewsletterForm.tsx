@@ -72,7 +72,7 @@ const NewsletterForm = () => {
                marginTop: '10px',
                textAlign: 'center'
             }}>
-               ✅ Thank you! You've successfully subscribed to our newsletter.
+               ✅ Thank you! You&apos;ve successfully subscribed to our newsletter.
             </div>
          )}
          
