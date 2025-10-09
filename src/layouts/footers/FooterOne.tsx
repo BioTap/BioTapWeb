@@ -1,95 +1,145 @@
+"use client"
 import Image from "next/image"
-import Link from "next/link";
+import Link from "next/link"
+import { useState } from "react"
 
-import footer_bg from "@/assets/img/update/bg/bg-gradient1-1.jpg";
+import logo from "@/assets/img/logo/logo.png"
 
 const FooterOne = () => {
+   const [email, setEmail] = useState("")
+   const [isSubmitting, setIsSubmitting] = useState(false)
+   const [showSuccess, setShowSuccess] = useState(false)
+   const [error, setError] = useState("")
+
+   const handleSubmit = async (e: React.FormEvent) => {
+      e.preventDefault()
+      
+      if (!email) {
+         setError("Please enter your email address")
+         return
+      }
+
+      if (!email.includes("@")) {
+         setError("Please enter a valid email address")
+         return
+      }
+
+      setIsSubmitting(true)
+      setError("")
+
+      try {
+         // Simulate API call - replace with actual API endpoint
+         await new Promise(resolve => setTimeout(resolve, 1000))
+         
+         // Here you would typically call your API endpoint
+         // const response = await fetch('/api/newsletter', {
+         //    method: 'POST',
+         //    headers: { 'Content-Type': 'application/json' },
+         //    body: JSON.stringify({ email })
+         // })
+         
+         setShowSuccess(true)
+         setEmail("")
+         
+         // Hide success message after 5 seconds
+         setTimeout(() => {
+            setShowSuccess(false)
+         }, 5000)
+         
+      } catch (err) {
+         setError("Something went wrong. Please try again.")
+      } finally {
+         setIsSubmitting(false)
+      }
+   }
    return (
-      <footer className="footer-wrapper footer-layout1 position-relative">
-         <div className="bg-gradient-1">
-            <Image src={footer_bg} alt="img" />
-         </div>
+      <footer className="footer-wrapper footer-layout2 pb-50">
          <div className="container">
-            <div className="footer-menu-area">
-               <div className="row gy-4 justify-content-between align-items-center">
-                  <div className="col-xl-5 col-lg-4">
-                     <div className="social-btn justify-content-center justify-content-lg-start">
-                        <Link href="https://www.facebook.com/">
-                           <i className="fab fa-facebook-f"></i>
-                        </Link>
-                        <Link href="#">
-                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                              <path
-                                 d="M10.0596 7.34522L15.8879 0.570312H14.5068L9.44607 6.45287L5.40411 0.570312H0.742188L6.85442 9.46578L0.742188 16.5703H2.12338L7.4676 10.3581L11.7362 16.5703H16.3981L10.0593 7.34522H10.0596ZM8.16787 9.54415L7.54857 8.65836L2.62104 1.61005H4.74248L8.71905 7.29827L9.33834 8.18405L14.5074 15.5779H12.386L8.16787 9.54449V9.54415Z"
-                                 fill="currentColor"></path>
-                           </svg>
-                        </Link>
-                        <Link href="https://instagram.com/">
-                           <i className="fab fa-instagram"></i>
-                        </Link>
-                        <Link href="https://linkedin.com/">
-                           <i className="fab fa-linkedin"></i>
-                        </Link>
+            <div className="row justify-content-between">
+               <div className="col-xl-auto col-lg-6 order-xl-1">
+                  <div className="widget footer-widget">
+                     <div className="widget-about">
+                        <div className="footer-logo">
+                           <Link href="/"><Image src={logo} style={{ height: "40px", width: "auto", objectFit: "contain" }} alt="BioTap" /></Link>
+                        </div>
+                        <p className="about-text">BioTap is a cutting-edge biometric payment technology company at the forefront of innovation in secure digital banking. Established in 2024, we&apos;re revolutionizing how people interact with financial services through advanced biometric authentication.</p>
+                        <div className="social-btn style2">
+                           {/* <Link href="https://facebook.com/"><i className="fab fa-facebook-f"></i></Link> */}
+                           <Link href="https://twitter.com/Biotapservices">
+                              <i className="fab fa-twitter"></i>
+                           </Link>
+                           <Link href="https://www.instagram.com/Biotap_services"><i className="fab fa-instagram"></i></Link>
+                           <Link href="https://www.linkedin.com/in/Biotapservices"><i className="fab fa-linkedin"></i></Link>
+                        </div>
                      </div>
                   </div>
-                  <div className="col-xl-7 col-lg-8 text-lg-end text-center">
-                     <ul className="footer-menu-list">
-                        <li>
-                           <Link href="index.html">
-                              HOME
-                           </Link>
-                        </li>
-                        <li>
-                           <Link href="#">
-                              OUR PROJECTS
-                           </Link>
-                        </li>
-                        <li>
-                           <Link href="#">
-                              OUR TEAM
-                           </Link>
-                        </li>
-                        <li>
-                           <Link href="#">
-                              NEWS FAQ
-                           </Link>
-                        </li>
-                        <li>
-                           <Link href="#">
-                              DOCUMENTS
-                           </Link>
-                        </li>
-                     </ul>
+               </div>
+
+               <div className="col-xl-auto col-lg-6 order-xl-3">
+                  <div className="footer-widget widget-newsletter">
+                     <h3 className="fw-title">SIGN UP FOR EMAIL UPDATES</h3>
+                     <p className="newsletter-text">Sign up with your email address to receive news and updates about BioTap&apos;s latest developments</p>
+                     
+                     {showSuccess && (
+                        <div className="alert alert-success mb-3" style={{ 
+                           backgroundColor: '#d4edda', 
+                           color: '#155724', 
+                           padding: '10px 15px', 
+                           borderRadius: '5px',
+                           border: '1px solid #c3e6cb',
+                           fontSize: '14px'
+                        }}>
+                           ✅ Thank you! You&apos;ve successfully subscribed to our newsletter.
+                        </div>
+                     )}
+                     
+                     {error && (
+                        <div className="alert alert-danger mb-3" style={{ 
+                           backgroundColor: '#f8d7da', 
+                           color: '#721c24', 
+                           padding: '10px 15px', 
+                           borderRadius: '5px',
+                           border: '1px solid #f5c6cb',
+                           fontSize: '14px'
+                        }}>
+                           ❌ {error}
+                        </div>
+                     )}
+                     
+                     <form onSubmit={handleSubmit} className="newsletter-form">
+                        <div className="form-group">
+                           <input 
+                              className="form-control" 
+                              type="email" 
+                              placeholder="Your Email Address"
+                              value={email}
+                              onChange={(e) => setEmail(e.target.value)}
+                              disabled={isSubmitting}
+                              required
+                           />
+                        </div>
+                        <button 
+                           type="submit" 
+                           className="btn btn5" 
+                           disabled={isSubmitting}
+                           style={{ 
+                              opacity: isSubmitting ? 0.7 : 1,
+                              cursor: isSubmitting ? 'not-allowed' : 'pointer'
+                           }}
+                        >
+                           {isSubmitting ? 'Subscribing...' : 'Subscribe'}
+                        </button>
+                     </form>
                   </div>
                </div>
-            </div>
-         </div>
-         <div className="copyright-wrap text-center text-lg-start">
-            <div className="container">
-               <div className="row gy-3 justify-content-between align-items-center">
-                  <div className="col-lg-6 align-self-center">
-                     <p className="copyright-text">Copyright © 2025 <Link href="#">Biotap.</Link> All rights reserved.</p>
+               <div className="col-xl-auto col-lg-6 order-xl-2">
+                  <div className="footer-widget widget-contact">
+                     <h3 className="fw-title">CONTACT US</h3>
+                     <p className="contact-info-text">Lagos, Nigeria</p>
+                     <div className="contact-info-link">Call Us: <Link href="tel:+2348079916633">+234 (807) 991-6633</Link></div>
+                     <div className="contact-info-link"><Link href="mailto:contact@bio-tap.com">contact@bio-tap.com</Link></div>
+                     <p className="copyright-text">Copyright © 2025 <Link href="#">BioTap.</Link> All rights reserved.</p>
                   </div>
-                  <div className="col-lg-6 text-lg-end">
-                     <ul className="footer-links">
-                        <li>
-                           <Link href="blog.html">
-                              Job & Career
-                           </Link>
-                        </li>
-                        <li>
-                           <Link href="contact.html">
-                              Terms and Condition
-                           </Link>
-                        </li>
-                        <li>
-                           <Link href="contact.html">
-                              Help Center
-                           </Link>
-                        </li>
-                     </ul>
-                  </div>
-
                </div>
             </div>
          </div>

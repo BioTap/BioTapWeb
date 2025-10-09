@@ -2,11 +2,13 @@ interface MenuItem {
     id: number;
     page:string;
     title: string;
+    titleKey: string;
     link: string;
     has_dropdown: boolean;
     sub_menus?: {
         link: string;
         title: string;
+        titleKey: string;
     }[];
 }[];
 
@@ -17,6 +19,7 @@ const menu_data: MenuItem[] = [
         page:"nav_1",
         has_dropdown: false,
         title: "Home",
+        titleKey: "nav.home",
         link: "/",
     },
     {
@@ -24,6 +27,7 @@ const menu_data: MenuItem[] = [
         page:"nav_1",
         has_dropdown: false,
         title: "Feature",
+        titleKey: "nav.services",
         link: "/#feature",
     },
     {
@@ -31,6 +35,7 @@ const menu_data: MenuItem[] = [
         page:"nav_1",
         has_dropdown: false,
         title: "RoadMap",
+        titleKey: "nav.roadmap",
         link: "/#roadMap",
     },
     // {
@@ -38,10 +43,11 @@ const menu_data: MenuItem[] = [
     //     page:"nav_1",
     //     has_dropdown: true,
     //     title: "Blog",
+    //     titleKey: "nav.blog",
     //     link: "#",
     //     sub_menus: [
-    //         { link: "/blog", title: "Our Blog" },
-    //         { link: "/blog-details", title: "Blog-Details", },
+    //         { link: "/blog", title: "Our Blog", titleKey: "nav.blog" },
+    //         { link: "/blog-details", title: "Blog-Details", titleKey: "nav.blog_details" },
     //     ],
     // },
     {
@@ -49,6 +55,7 @@ const menu_data: MenuItem[] = [
         page:"nav_1",
         has_dropdown: false,
         title: "Contact",
+        titleKey: "nav.contact",
         link: "/contact",
     },
     
@@ -57,6 +64,7 @@ const menu_data: MenuItem[] = [
         page:"nav_2",
         has_dropdown: false,
         title: "Home",
+        titleKey: "nav.home",
         link: "/",
     },
     {
@@ -64,6 +72,7 @@ const menu_data: MenuItem[] = [
         page:"nav_2",
         has_dropdown: false,
         title: "Why Blockchain",
+        titleKey: "nav.about",
         link: "/home-two/#blockchain",
     },
     {
@@ -71,6 +80,7 @@ const menu_data: MenuItem[] = [
         page:"nav_2",
         has_dropdown: false,
         title: "Feature",
+        titleKey: "nav.services",
         link: "/home-two/#feature",
     },
     // {
@@ -78,10 +88,11 @@ const menu_data: MenuItem[] = [
     //     page:"nav_2",
     //     has_dropdown: true,
     //     title: "Blog",
+    //     titleKey: "nav.blog",
     //     link: "#",
     //     sub_menus: [
-    //         { link: "/blog", title: "Our Blog" },
-    //         { link: "/blog-details", title: "Blog-Details", },
+    //         { link: "/blog", title: "Our Blog", titleKey: "nav.blog" },
+    //         { link: "/blog-details", title: "Blog-Details", titleKey: "nav.blog_details" },
     //     ],
     // },
     {
@@ -89,6 +100,7 @@ const menu_data: MenuItem[] = [
         page:"nav_2",
         has_dropdown: false,
         title: "Contact",
+        titleKey: "nav.contact",
         link: "/contact",
     },
 ];

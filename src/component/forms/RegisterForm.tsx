@@ -16,7 +16,7 @@ const RegisterForm = () => {
             <div className="eg-login__input-box">
                <div className="eg-login__input">
                   <label htmlFor="email">Your Email</label>
-                  <input id="email" type="email" placeholder="iko@mail.com" />
+                  <input id="email" type="email" placeholder="biotap@mail.com" />
                </div>
             </div>
             <div className="eg-login__input-box">

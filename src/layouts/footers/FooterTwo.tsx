@@ -13,9 +13,9 @@ const FooterTwo = () => {
                   <div className="widget footer-widget">
                      <div className="widget-about">
                         <div className="footer-logo">
-                           <Link href="/"><Image src={logo_1} style={{ height: "35px" }} alt="iko" /></Link>
+                           <Link href="/"><Image src={logo_1} style={{ height: "35px" }} alt="biotap" /></Link>
                         </div>
-                        <p className="about-text">Iko is a cutting-edge blockchain technology company at the forefront of innovation in the decentralized ledger space. Established in 2024</p>
+                        <p className="about-text">BioTap is a cutting-edge biometric payment technology company at the forefront of innovation in secure digital banking. Established in 2024</p>
                         <div className="social-btn style2">
                            <Link href="https://facebook.com/"><i className="fab fa-facebook-f"></i></Link>
                            <Link href="#">

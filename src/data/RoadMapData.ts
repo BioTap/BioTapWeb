@@ -24,6 +24,18 @@ const road_map_data: DataType[] = [
       title: "Security & Infrastructure",
       desc: "We integrated end-to-end encryption, multi-layer biometric verification, and AI-driven fraud monitoring into Biotap's backend systems. Our infrastructure meets global standards for financial data protection and compliance. Goal: Achieve enterprise-grade security and scalability.",
    },
+   {
+      id: 4,
+      sub_title: "Phase 4",
+      title: "Beta Launch & Testing",
+      desc: "BioTap enters controlled beta testing with select users and partners. We gather real-world feedback, optimize performance, and refine user experience. This phase includes merchant integration, payment processing validation, and regulatory compliance testing. Goal: Launch public beta with 10,000+ users and 100+ merchant partners.",
+   },
+   {
+      id: 5,
+      sub_title: "Phase 5",
+      title: "Global Rollout & Expansion",
+      desc: "Full-scale launch of BioTap across multiple markets with advanced features including cross-border payments, business accounts, and API integrations. We expand partnerships with major financial institutions worldwide. Goal: Reach 1M+ active users across 25+ countries with $1B+ in processed transactions.",
+   },
 ];
 
 export default road_map_data;

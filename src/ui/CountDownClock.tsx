@@ -1,8 +1,11 @@
 "use client"
 import React from 'react';
 import { useTimer } from 'react-timer-hook';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const CountdownClock=()=> {
+  const { t } = useLanguage();
+  
   // Set the expiration timestamp based on the current time plus the desired duration
   const time = new Date();
   time.setDate(time.getDate() + 156); // 302 days
@@ -20,16 +23,16 @@ const CountdownClock=()=> {
   return (
     <>
       <div className="time-count day">
-        <span>{days}</span>days
+        <span>{days}</span>{t('countdown.days')}
       </div>
       <div className="time-count hour">
-        <span>{hours}</span>hours
+        <span>{hours}</span>{t('countdown.hours')}
       </div>
       <div className="time-count min">
-        <span>{minutes}</span>mins
+        <span>{minutes}</span>{t('countdown.mins')}
       </div>
       <div className="time-count sec">
-        <span>{seconds}</span>secs
+        <span>{seconds}</span>{t('countdown.secs')}
       </div>
     </>
   );

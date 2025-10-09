@@ -1,12 +1,14 @@
+"use client";
 import Image from "next/image";
 import ScrollAnimation from "@/ui/ScrollAnimation";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 import intro_thumb from "@/assets/img/banner/banner_shape02.png";
 
 interface DataType {
    id: number;
-   title: string;
-   desc: JSX.Element;
+   titleKey: string;
+   descKey: string;
    icon: string;
    color: string;
    gradient: string;
@@ -15,24 +17,24 @@ interface DataType {
 const intro_data: DataType[] = [
    {
       id: 1,
-      title: "Who We Are",
-      desc: (<>Biotap is a <span className="highlight-word">next-generation fintech platform</span> redefining how people access, manage, and secure their money. We merge biometric authentication with intelligent banking systems to create a payment experience that&apos;s faster, safer, and more personal.</>),
+      titleKey: "intro.who_we_are",
+      descKey: "intro.who_we_are_desc",
       icon: "🔐",
       color: "#4ecdc4",
       gradient: "linear-gradient(135deg, #4ecdc4, #45b7d1)"
    },
    {
       id: 2,
-      title: "What We Do",
-      desc: (<>We enable users to pay, transfer, and authenticate using nothing but their <span className="highlight-word">unique identity</span> — fingerprints, face, or voice. Our goal is to eliminate passwords and fraud, making transactions as effortless as a tap.</>),
+      titleKey: "intro.what_we_do",
+      descKey: "intro.what_we_do_desc",
       icon: "👆",
       color: "#ff6b6b",
       gradient: "linear-gradient(135deg, #ff6b6b, #ee5a24)"
    },
    {
       id: 3,
-      title: "Why It Matters",
-      desc: (<>In an era of digital threats, <span className="highlight-word">trust is currency</span>. Biotap bridges security and simplicity, empowering individuals and businesses to transact confidently anywhere, anytime.</>),
+      titleKey: "intro.why_it_matters",
+      descKey: "intro.why_it_matters_desc",
       icon: "🛡️",
       color: "#96ceb4",
       gradient: "linear-gradient(135deg, #96ceb4, #85c1a3)"
@@ -40,6 +42,8 @@ const intro_data: DataType[] = [
 ]
 
 const IntroArea = () => {
+   const { t } = useLanguage();
+   
    return (
       <div className="pt-130 pb-140 overflow-hidden position-relative">
          {/* Background Elements */}
@@ -78,10 +82,10 @@ const IntroArea = () => {
                                  <span className="feature-icon">{item.icon}</span>
                                  <div className="icon-glow"></div>
                               </div>
-                              <h3 className="feature-title">{item.title}</h3>
+                              <h3 className="feature-title">{t(item.titleKey)}</h3>
                            </div>
                            <div className="feature-content">
-                              <p className="feature-description">{item.desc}</p>
+                              <p className="feature-description" dangerouslySetInnerHTML={{ __html: t(item.descKey) }}></p>
                            </div>
                            <div className="feature-card-border"></div>
                         </div>

@@ -8,6 +8,7 @@ import Sidebar from "./Menu/Sidebar";
 import HeaderOffcanvas from "./Menu/HeaderOffcanvas";
 
 import logo_1 from "@/assets/img/logo/logo.png";
+import LanguageToggle from "@/components/LanguageToggle";
 
 const HeaderOne = () => {
     const { sticky } = UseSticky();
@@ -32,18 +33,7 @@ const HeaderOne = () => {
                                         <div className="header-action">
                                             <ul className="list-wrap">
                                                 <li>
-                                                    <div className="dropdown-link">
-                                                        <Link className="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-bs-toggle="dropdown" aria-expanded="false">ENG</Link>
-                                                        <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink1">
-                                                            <li>
-                                                                <Link href="#">GER</Link>
-                                                                <Link href="#">FREN</Link>
-                                                                <Link href="#">ARAB</Link>
-                                                                <Link href="#">LAT</Link>
-                                                                <Link href="#">SPA</Link>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
+                                                    <LanguageToggle />
                                                 </li>
                                             </ul>
                                         </div>

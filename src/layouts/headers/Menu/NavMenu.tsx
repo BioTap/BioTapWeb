@@ -1,10 +1,12 @@
 "use client";
 import Link from "next/link.js";
 import { usePathname } from "next/navigation";
+import { useLanguage } from "@/contexts/LanguageContext";
 import menu_data from "../../../data/MenuData";
 
 const NavMenu = () => {
     const currentRoute = usePathname();
+    const { t } = useLanguage();
 
     const isMenuItemActive = (menuLink: string) => {
         return currentRoute === menuLink;
@@ -22,7 +24,7 @@ const NavMenu = () => {
                 >
                     <Link href={menu.link}
                         className={`section-link ${(isMenuItemActive(menu.link) || (menu.sub_menus && menu.sub_menus.some((sub_m: any) => sub_m.link && isSubMenuItemActive(sub_m.link)))) ? "active" : ""}`}>
-                        {menu.title}
+                        {t(menu.titleKey)}
                     </Link>
 
                     {menu.has_dropdown && (
@@ -35,7 +37,7 @@ const NavMenu = () => {
                                                 href={sub_m.link}
                                                 className={
                                                     sub_m.link && isSubMenuItemActive(sub_m.link) ? "active" : ""}>
-                                                {sub_m.title}
+                                                {t(sub_m.titleKey)}
                                             </Link>
                                         </li>
                                     ))}

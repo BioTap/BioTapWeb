@@ -2,8 +2,10 @@
 import { useState, useEffect } from 'react'
 import { toast } from 'react-toastify'
 import Confetti from 'react-confetti'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 const BetaSignupCard = () => {
+  const { t } = useLanguage();
   const [email, setEmail] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [showConfetti, setShowConfetti] = useState(false)
@@ -112,28 +114,28 @@ const BetaSignupCard = () => {
       
       <div className="ico-countdown-card">
         <div className="countdown-header">
-          <h2 className="countdown-title">Launch date</h2>
+          <h2 className="countdown-title">{t('beta.launch_date')}</h2>
         </div>
 
         <div className="countdown-timer">
           <div className="countdown-item">
             <span className="countdown-number">{timeLeft.days}</span>
-            <span className="countdown-label">days</span>
+            <span className="countdown-label">{t('countdown.days')}</span>
           </div>
           <div className="countdown-separator">..</div>
           <div className="countdown-item">
             <span className="countdown-number">{timeLeft.hours}</span>
-            <span className="countdown-label">hours</span>
+            <span className="countdown-label">{t('countdown.hours')}</span>
           </div>
           <div className="countdown-separator">..</div>
           <div className="countdown-item">
             <span className="countdown-number">{timeLeft.minutes}</span>
-            <span className="countdown-label">mins</span>
+            <span className="countdown-label">{t('countdown.mins')}</span>
           </div>
           <div className="countdown-separator">..</div>
           <div className="countdown-item">
             <span className="countdown-number">{timeLeft.seconds}</span>
-            <span className="countdown-label">secs</span>
+            <span className="countdown-label">{t('countdown.secs')}</span>
           </div>
         </div>
 
@@ -142,40 +144,40 @@ const BetaSignupCard = () => {
             <span className={`beta-users-number ${isAnimating ? 'pulse' : ''}`}>
               {betaUsers.toLocaleString()}
             </span>
-            <span className="beta-users-label">Beta Users</span>
+            <span className="beta-users-label">{t('beta.users')}</span>
           </div>
         </div>
 
             <div className="email-signup-section">
-              <p className="signup-description">Join our beta program and be the first to experience BioTap!</p>
+              <p className="signup-description">{t('beta.description')}</p>
               
               {/* Security Badges */}
               <div className="security-badges" style={{ marginBottom: '20px', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '10px' }}>
                 <div className="security-badge">
                   <i className="fas fa-shield-alt"></i>
-                  <span>Adaptive Security</span>
+                  <span>{t('beta.security')}</span>
                 </div>
                 <div className="security-badge">
                   <i className="fas fa-credit-card"></i>
-                  <span>Smart Payments</span>
+                  <span>{t('beta.payments')}</span>
                 </div>
                 <div className="security-badge">
                   <i className="fas fa-user-check"></i>
-                  <span>Biometric Identity</span>
+                  <span>{t('beta.identity')}</span>
                 </div>
               </div>
 
               <form onSubmit={handleSubmit} className="email-form">
                 <input
                   type="email"
-                  placeholder="Enter your email address"
+                  placeholder={t('beta.email_placeholder')}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   disabled={isLoading || isSubmitted}
                   required
                 />
                 <button type="submit" disabled={isLoading || isSubmitted} className="btn-modern">
-                  {isLoading ? 'Adding...' : isSubmitted ? 'Joined!' : 'Join Beta'}
+                  {isLoading ? t('beta.adding') : isSubmitted ? t('beta.joined') : t('beta.join')}
                 </button>
               </form>
             </div>
