@@ -48,7 +48,7 @@ const Hero = () => {
                         <Link href="/contact" className="btn btn-modern" >
                            {t('hero.cta')}
                         </Link>
-                        <Link href="/blog" className="btn btn-bio" >
+                        <Link href="#roadmap" className="btn btn-bio" >
                            {t('hero.learn_more')}
                         </Link>
                      </div>

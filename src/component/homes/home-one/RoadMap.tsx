@@ -65,7 +65,7 @@ const RoadMap = () => {
    };
 
    return (
-      <div className="pt-130 pb-140 overflow-hidden position-relative z-index-common" id="roadMap">
+      <div className="pt-130 pb-140 overflow-hidden position-relative z-index-common" id="roadmap">
          <div className="bg-gradient-2">
             <Image src={roadmap_bg} alt="img" />
          </div>
