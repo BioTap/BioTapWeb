@@ -66,7 +66,6 @@ const translations = {
     'slogan.pay': 'Pay With a Touch',
     'slogan.bankless': 'Bankless.',
     'slogan.tapmore': 'Tapmore.',
-    'slogan.livesmarter': 'Livesmarter.',
     
     // Footer
     'footer.about': 'BioTap is a cutting-edge biometric payment technology company at the forefront of innovation in secure digital banking.',
@@ -142,7 +141,6 @@ const translations = {
     'slogan.pay': 'Payez D\'un Toucher',
     'slogan.bankless': 'Sans Banque.',
     'slogan.tapmore': 'Touchez Plus.',
-    'slogan.livesmarter': 'Vivez Plus Intelligemment.',
     
     // Footer
     'footer.about': 'BioTap est une entreprise de technologie de paiement biométrique de pointe à l\'avant-garde de l\'innovation dans la banque numérique sécurisée.',
@@ -218,7 +216,6 @@ const translations = {
     'slogan.pay': '一触即付',
     'slogan.bankless': '无银行。',
     'slogan.tapmore': '轻触更多。',
-    'slogan.livesmarter': '生活更智能。',
     
     // Footer
     'footer.about': 'BioTap是一家尖端的生物识别支付技术公司，在安全数字银行创新领域处于前沿。',

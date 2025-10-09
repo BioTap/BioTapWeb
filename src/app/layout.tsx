@@ -15,7 +15,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning={isDev}>
       <head>
         <meta name="description" content="BioTap – Secure Biometric Payment Solutions is a cutting-edge fintech platform that revolutionizes digital banking through advanced biometric authentication. Experience faster, safer, and more personal payment solutions with our innovative technology that combines biometric security with intelligent banking systems." />
-        <link rel="icon" href="/favicon.png" sizes="any" />
+        <link rel="icon" href="/Favicon.png" sizes="any" />
+        <link rel="shortcut icon" href="/Favicon.png" />
+        <link rel="apple-touch-icon" href="/Favicon.png" />
       </head>
       <body suppressHydrationWarning={true}>
         <LanguageProvider>

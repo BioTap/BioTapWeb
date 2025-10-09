@@ -77,10 +77,9 @@ const ChooseArea = () => {
                               
                               <div className="slogan-container">
                                  <div className="slogan-text">
-                                    <span className="slogan-word">{t('slogan.pay')}</span>
                                     <span className="slogan-word">{t('slogan.bankless')}</span>
                                     <span className="slogan-word">{t('slogan.tapmore')}</span>
-                                    <span className="slogan-word">{t('slogan.livesmarter')}</span>
+                                    <span className="slogan-word">{t('slogan.pay')}</span>
                                  </div>
                                  <div className="slogan-underline"></div>
                               </div>
