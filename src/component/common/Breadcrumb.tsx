@@ -1,7 +1,6 @@
 import Image from "next/image"
 import Link from "next/link";
 
-import breadcrumbShape_1 from "@/assets/img/images/breadcrumb_shape01.png";
 import breadcrumbShape_2 from "@/assets/img/images/breadcrumb_shape02.png";
 import bg_img from "@/assets/img/bg/breadcrumb_bg.png"
 
@@ -24,7 +23,6 @@ const Breadcrumb = ({ title }: any) => {
             </div>
          </div>
          <div className="breadcrumb-shape-wrap">
-            <Image src={breadcrumbShape_1} alt="" className="alltuchtopdown" />
             <Image src={breadcrumbShape_2} alt="" className="rotateme" />
          </div>
       </section>

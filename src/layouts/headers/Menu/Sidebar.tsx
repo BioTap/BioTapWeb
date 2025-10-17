@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import MobileMenu from "./MobileMenu";
+import LanguageToggle from "@/components/LanguageToggle";
 
 import logo_1 from "@/assets/img/logo/logo.png";
 
@@ -72,6 +73,17 @@ const Sidebar = ({ isActive, setIsActive }: any) => {
                         >
                             <i className="fas fa-times"></i>
                         </div>
+                    </div>
+
+                    {/* Language Toggle */}
+                    <div style={{ 
+                        marginBottom: '20px',
+                        paddingBottom: '20px',
+                        borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+                        display: 'flex',
+                        justifyContent: 'center'
+                    }}>
+                        <LanguageToggle />
                     </div>
 
                     {/* Navigation Menu */}
